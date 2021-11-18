@@ -1,0 +1,133 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.board {
+    margin: 10px 0;
+}
+
+.board image {
+    width: 800px;
+    height: 800px;
+}
+
+.board circle {
+    fill: transparent;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: fill 0.3s;
+}
+
+.board circle.player {
+    fill: var(--c-d-green);
+}
+
+.board circle.bot {
+    fill: var(--c-d-red);
+}
+
+.board circle.tied {
+    fill: var(--c-d-blue);
+}
+
+.board text {
+    text-anchor: middle;
+    fill: transparent;
+    font-size: 2em;
+    transition: fill 0.3s;
+}
+
+.board .bubble-text {
+    cursor: pointer;
+}
+
+.board text.positive {
+    fill: var(--c-d-green);
+}
+
+.board text.negative {
+    fill: var(--c-d-red);
+}
+
+.board text.neutral {
+    fill: var(--c-d-blue);
+}
+
+.board text.active {
+    fill: white;
+}
+
+.container {
+    --size: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    display: grid;
+    grid-template: auto calc(var(--size) + 20px) repeat(2, auto) / calc(var(--size) / 3 * 2) calc(var(--size) / 3);
+    user-select: none;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: var(--c-d-light-gray);
+    color: white;
+}
+
+button,
+.button {
+    background-color: var(--c-d-gray);
+    color: var(--c-d-light-gray);
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    margin: 5px;
+    transition: box-shadow 0.1s, background-color 0.1s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:active,
+.button:active {
+    box-shadow: inset 0 0 5px var(--c-d-gray-dark3);
+}
+
+.logo {
+    background-image: url(https://cdn.discordapp.com/attachments/901041345815252992/910501994114986004/828px-TBBT_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    list-style: none;
+    padding-left: 100px;
+    margin: 15px auto;
+}
+
+.logo li {
+    font-size: 1.5em;
+    color: var(--c-d-light-gray);
+}
+
+.logo li:nth-child(even) {
+    font-size: 1.8em;
+    color: white;
+}
